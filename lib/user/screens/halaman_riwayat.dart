@@ -15,7 +15,7 @@ class _HalamanRiwayatState extends State<HalamanRiwayat> {
       body: ListView(
         children: <Widget>[
           buildTop(),
-          //buildContent(),
+          buildContent(),
           BottomNavigation(),
         ],
       ),
@@ -28,7 +28,7 @@ class _HalamanRiwayatState extends State<HalamanRiwayat> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Riwayat Lapor', style: Theme.of(context).textTheme.headline3),
-        SizedBox(height: 50,),
+        SizedBox(height: 20,),
         Row(
           children: [
             Container(
@@ -122,6 +122,65 @@ class _HalamanRiwayatState extends State<HalamanRiwayat> {
     ),
   );
 
-  Widget BuildContent() => Container();
+  Widget buildContent() => Container(
+    margin: const EdgeInsets.only(
+        left: 24,
+        top: 16,
+        right: 24,
+        bottom: 16,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(6),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            spreadRadius: 0,
+            blurRadius: 10,
+            offset: const Offset(0, 0),
+          ),
+        ],
+      ),
+    child:Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 99,
+            width: 66,
+          ),
+          const SizedBox(
+            width: 38,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                "Lokasi : ruang 28",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                "4 Feb, 12:16 pm",
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w200),
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              Text(
+               "Monitor dan AC rusak, tidak bisa menyala. Ada...",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w200, color: Colors.black
+              ),
+              ),
+            ],
+          ),
+        ],
+    ),      
+  );
 
 }
